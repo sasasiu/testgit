@@ -155,6 +155,10 @@ public class Graph {
 	public String queryBridgeWords(String word1, String word2) {
 		Vertice word1Node =  search(word1);
 		Vertice word2Node =  search(word2);
+		if(word1Node==null||word2Node==null)
+		{
+			System.out.println("no word1 or word2 in the graph");
+			return "";}
 		//Vertice word1Node = matrix[Math.abs(word1.hashCode())%100];
 		//Vertice word2Node = matrix[Math.abs(word2.hashCode())%100];
 		Vertice AjenOfWord1 = word1Node,temp,midNode;
@@ -179,9 +183,12 @@ public class Graph {
 
 		if(Wordscot==0) {
 			System.out.print("no bridge words from "+word1+" to "+word2+"\n");
+			return "";
 		}
 		else if(Wordscot==1) {
 			System.out.print("the bridge words from "+word1+" to "+ word2 +" is "+Words[0].getWord()+"\n" );
+			return Words[0].getWord();
+			
 		}
 		else {
 			System.out.print("the bridge words from "+word1+" to "+word2+" are ");
@@ -189,9 +196,12 @@ public class Graph {
 				System.out.print(Words[i].getWord()+",");
 			}
 			System.out.print("and "+Words[Wordscot-1].getWord()+".\n");
+			return Words[0].getWord();
 		}
+		
 
-		return word2;
+		
+	
 	}
 
 public String generateNewText(String inputText) {
