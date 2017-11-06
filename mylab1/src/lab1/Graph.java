@@ -312,6 +312,9 @@ public String generateNewText(String inputText) {
 				}
 			}
 		}
+		
+		
+		
 		min = 999;
 		visited[word1Rank] = 1;
 		nextRank = 0;
@@ -349,7 +352,7 @@ public String generateNewText(String inputText) {
 		return word2;
 	}
 
-	public String calcShortestPath2(String word1, String word2) {
+	public String calcShortestPath(String word1, String word2) {
 		Vertice s = search(word1),e = search(word2);
 		if (s != null && e != null) {
 			Comparator<Vertice> t = new Comparator<Vertice>() {

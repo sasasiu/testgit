@@ -71,7 +71,7 @@ public class labMain {
 				w1 = console.next();
 				System.out.println("输入第二个单词：");
 				w2 = console.next();
-				System.out.println(gh.calcShortestPath2(w1,w2));
+				System.out.println(gh.calcShortestPath(w1,w2));
 				gh.calcShortestPath1(w1,w2);
 			}
 			else if(order == 6)
