@@ -4,8 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.*;
-//change things in graph.java
-//change of b1 in graphjava
+//zzzzzzzzzzzzz
 public class Graph {
 	private int numOfNodes;
 	private Vertice[] matrix = new Vertice[100]; 
@@ -275,12 +274,7 @@ public String generateNewText(String inputText) {
 		}
 		return temp;
 	}
-	private String shortestPath(Vertice v1,Vertice v2) {
-		if (v1 == v2)
-			return v1.getWord();
-		String path = shortestPath(v1,v2.getPi()) + "---->" + v2.getWord();
-		return path;
-	}
+
 	public String calcShortestPath1(String word1, String word2) {
 		Vertice word1Node = search(word1);
 		Vertice word2Node = search(word2);
@@ -379,7 +373,7 @@ public String generateNewText(String inputText) {
 				u = pq.remove();
 				v = u.getAjen();
 				if (v != null)
-					edgeV = search(v.getWord());
+					edgeV = search(v.getWord()); //当前松弛的边为u-》v
 				while (v != null) {
 					if ((u.getD() + v.getWeight()) < edgeV.getD()) {
 						edgeV.setD(u.getD() + v.getWeight());
@@ -398,6 +392,13 @@ public String generateNewText(String inputText) {
 		else
 			return "path don't exist";
 	}
+	private String shortestPath(Vertice v1,Vertice v2) {
+		if (v1 == v2)
+			return v1.getWord();
+		String path = shortestPath(v1,v2.getPi()) + "---->" + v2.getWord();
+		return path;
+	}
+	
 	public String randomWalk() {
 		
         int max=99;
